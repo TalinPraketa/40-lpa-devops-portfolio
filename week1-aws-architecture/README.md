@@ -6,21 +6,21 @@ This project demonstrates a **production-style 3-tier architecture on AWS** buil
 
 The goal was to design a **secure, scalable, and highly available infrastructure** while solving real-world cloud and networking issues.
 
----
+
 
 ## 🏗️ Architecture
-Internet
-↓
-Application Load Balancer (Public Subnets)
-↓
-Auto Scaling Group (Private Subnets)
-↓
-RDS (MySQL - Private Subnets)
+   
+   Internet
+   ↓
+   Application Load Balancer (Public Subnets)
+   ↓
+   Auto Scaling Group (Private Subnets)
+   ↓
+   RDS (MySQL - Private Subnets)
 
-  * Bastion Host (Secure SSH Access)
-  * NAT Gateway (Outbound Internet for private instances)
+    * Bastion Host (Secure SSH Access)
+    * NAT Gateway (Outbound Internet for private instances)
 
----
 
 ## ⚙️ Technologies Used
 
@@ -29,7 +29,7 @@ RDS (MySQL - Private Subnets)
 - Linux (Ubuntu)
 - Apache (Web Server)
 
----
+
 
 ## 🔥 Key Features
 
@@ -55,7 +55,6 @@ RDS (MySQL - Private Subnets)
 ### ✅ Infrastructure as Code (IaC)
 - Entire infrastructure provisioned using Terraform
 
----
 
 ## 🧠 Real-World Issues Solved
 
@@ -83,6 +82,7 @@ RDS (MySQL - Private Subnets)
 
 ## 📂 Project Structure
 
+
 terraform/
 ├── modules/
 │ ├── vpc/
@@ -101,7 +101,6 @@ terraform/
 
 ## 🚀 How to Deploy
 
-```bash
 terraform init
 terraform plan
 terraform apply
