@@ -32,7 +32,20 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_KEY }}
           script: |
-            unzip -o app.zip
+            # Install required packages
+            sudo apt-get update -y
+            sudo apt-get install -y apache2 unzip
+
+            # Start apache
+            sudo systemctl start apache2
+            sudo systemctl enable apache2
+
+            # Clean old app
             sudo rm -rf /var/www/html/*
+
+            # Unzip app
+            unzip -o app.zip
+
+            # Copy new app
             sudo cp -r week2-cicd/app/* /var/www/html/
             sudo systemctl restart apache2
