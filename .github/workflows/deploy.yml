@@ -1,4 +1,3 @@
-
 name: Deploy App to EC2
 
 on:
@@ -47,3 +46,4 @@ jobs:
             sudo cp -r app/* /var/www/html/
 
             sudo systemctl restart apache2
+
