@@ -8,10 +8,15 @@ resource "aws_launch_template" "app_lt" {
   user_data = base64encode(<<-EOF
 #!/bin/bash
 apt-get update -y
-apt-get install -y apache2
+apt-get install -y apache2 git
 systemctl start apache2
 systemctl enable apache2
-echo "Hello from ASG - Talin" > /var/www/html/index.html
+
+# Clean old content
+rm -rf /var/www/html/*
+
+# Placeholder
+echo "App will be deployed via CI/CD" > /var/www/html/index.html
 EOF
   )
 }
