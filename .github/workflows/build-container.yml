@@ -1,0 +1,29 @@
+name: Build and Push SRE Demo Image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'week3-kubernetes-sre-platform/app/**'
+      - '.github/workflows/build-sre-demo.yml'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: ./week3-kubernetes-sre-platform/app
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sre-demo-app:latest
