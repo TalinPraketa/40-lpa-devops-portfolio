@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: sre-demo-service
   namespace: sre-demo
+  labels:
+    app: sre-demo-app  
 spec:
   selector:
     app: sre-demo-app
   ports:
-    - port: 80
+    - name: http
+      port: 80
       targetPort: 5000
   type: ClusterIP
