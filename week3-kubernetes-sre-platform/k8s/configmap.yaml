@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sre-demo-config
+  namespace: sre-demo
+data:
+  APP_ENV: "production"
