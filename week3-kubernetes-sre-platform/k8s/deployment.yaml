@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sre-demo-app
-          image: your-dockerhub-user/sre-demo-app:latest
+          image: talinpraketa/sre-demo-app:latest
           ports:
             - containerPort: 5000
           envFrom:
