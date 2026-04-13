@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sre-demo-app
-          image: talinpraketa/sre-demo-app:latest
+          image: talinpraketa/sre-demo-app:dev
           ports:
             - containerPort: 5000
           envFrom:
