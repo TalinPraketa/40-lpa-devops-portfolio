@@ -1,0 +1,11 @@
+{
+  "name": "event-consumer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/consumer.js"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
